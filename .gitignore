@@ -42,3 +42,6 @@ logs/
 
 # Docker
 *.tar
+
+# CRM database (large file, download separately)
+data/*.db
