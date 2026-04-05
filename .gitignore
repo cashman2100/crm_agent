@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 
+# Private documentation
+docs/
+
 # Claude Code settings
 .claude/
 
