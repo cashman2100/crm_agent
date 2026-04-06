@@ -43,5 +43,4 @@ logs/
 # Docker
 *.tar
 
-# CRM database (large file, download separately)
-data/*.db
+# CRM database is tracked (33MB, needed for Docker build)
