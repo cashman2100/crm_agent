@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 # Create non-root user
 RUN useradd -m -s /bin/bash agent
@@ -9,8 +9,9 @@ WORKDIR /home/agent
 COPY --chown=agent pyproject.toml uv.lock* README.md ./
 RUN uv sync --locked --no-dev 2>/dev/null || uv sync --no-dev
 
-# Copy source
+# Copy source and database
 COPY --chown=agent src/ ./src/
+COPY --chown=agent data/ ./data/
 
 EXPOSE 9010
 
